@@ -1,0 +1,16 @@
+spring:
+  kafka:
+    bootstrap-servers: localhost:9092
+    properties:
+      schema.registry.url: http://localhost:8081
+    streams:
+      application-id: kafka-streams-app
+      state-dir: /tmp/kafka-streams
+
+topics:
+  agent: agent-topic
+  policy: policy-topic
+  master: master-topic
+
+kafka:
+  join-window-duration-ms: 300000  # 5 minutes
