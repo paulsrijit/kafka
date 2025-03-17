@@ -1,0 +1,29 @@
+# Server configuration
+server:
+   port: 8080
+
+# MongoDB configuration
+spring:
+   application.name: mongo-loader-prmh
+   data:
+      mongodb:
+         uri: mongodb://localhost:27017/dynamicdb
+
+# Kafka configuration
+   kafka:
+      bootstrap-servers: localhost:9092
+      consumer:
+         group-id: mongo-loader-prmh
+         auto-offset-reset: earliest
+         key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+         value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+
+# Spring Boot 3.x specific settings
+   threads:
+      virtual:
+         enabled: true
+
+# Custom application properties
+kafka:
+   topic:
+      name: ENRICHED-PREMIUM-COLLECTION
